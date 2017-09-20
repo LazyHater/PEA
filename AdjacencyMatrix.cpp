@@ -19,8 +19,8 @@ AdjacencyMatrix::~AdjacencyMatrix()
 {
 }
 
-int AdjacencyMatrix::getV() inline const { return V; };
-int AdjacencyMatrix::getE() inline const { return E; }; 
+inline int AdjacencyMatrix::getV() const { return V; };
+inline int AdjacencyMatrix::getE() const { return E; };
 
 
 //std::deque<int> AdjacencyMatrix::neighbors(int x) const
@@ -129,7 +129,7 @@ AdjacencyMatrix & AdjacencyMatrix::generate(int verticles, int min_val, int max_
 void AdjacencyMatrix::checkOutOfRange(int x, int y) const {
 	if ((x >= matrix.size()) || (y >= matrix.size())) {
 		char buffer[100];
-		sprintf_s(buffer, "Out of range! x: %i y: %i max: %i", x, y, matrix.size());
+                sprintf(buffer, "Out of range! x: %i y: %i max: %i", x, y, matrix.size());
 		throw std::out_of_range(buffer);
 	}
 }

@@ -11,16 +11,16 @@ public:
 	~AdjacencyMatrix();
 
 	// returns the amount of vertexes
-	int getV() inline const; 
+        inline int getV() const;
 
 	// returns the amount of edges
-	int getE() inline const; 
+        inline int getE() const;
 
 	//// lists all vertices y such that there is an edge from the vertex x to the vertex y;
 	//std::deque<int> neighbors(int x) const;
 
 	// returns the value associated with edge from verticle x to y
-	int getValue(int x, int y) inline const;
+        inline int getValue(int x, int y) const;
 
 	// sets the given value associated with edge from verticle x to y
 	AdjacencyMatrix & setValue(int x, int y, int val);
