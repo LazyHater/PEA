@@ -2,12 +2,15 @@
 #include <iostream>
 
 class Matrix_Test : public ::testing::Test{
-  const std::string TestFile = "READMY.txt";
+protected:
+    AdjacencyMatrix matrix;
+    const std::string TestFile = "";
 
-  virtual void SetUp(){
+    virtual void SetUp(){
+        if(TestFile!="")matrix.loadFromFile(TestFile);
 	}
-	virtual void TearDown(){
-
+    virtual void TearDown(){
+        matrix.clear();
 	}
 	//------
 	Matrix_Test(){}
@@ -15,20 +18,38 @@ class Matrix_Test : public ::testing::Test{
 	//-------
 };
 
-
-TEST(Matrix,Matrix){
+TEST(Matrix_Test,generate){
+    int vertexAmount=10;
+    int maxValue=100;
+    int minValue=-100;
+    if(matrix.GetV()!=0)GetMatrix().clear();
+    GetMatrix().generate(vertexAmount,minValue,maxValue);
+    EXPECT_TRUE(matrix.GetV()==vertexAmount);
+    EXPECT_TRUE(matrix.GetE()==vertexAmount(vertexAmount-1));
+    for(auto i : vertexAmount){
+        for(auto j : vertexAmount){
+            if(i!=j){EXPECT_TRUE(matrix.getValue(i,j)>=minValue&&matrix.getValue(i,j)<=maxValue);}
+        }
+    }
+}
+TEST(Matrix_Test,clear){
 
 }
 
-TEST(Matrix,addVertex){
+TEST(Matrix_Test,loadFromFile){
 
 }
 
-TEST(Matrix,addEdge){
+
+TEST(Matrix_Test,addVertex){
 
 }
 
-TEST(Matrix,getEdgeValue){
+TEST(Matrix_Test,addEdge){
+
+}
+
+TEST(Matrix_Test,getEdgeValue){
 
 }
 
