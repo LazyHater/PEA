@@ -20,7 +20,7 @@ public:
 	//std::deque<int> neighbors(int x) const;
 
 	// returns the value associated with edge from verticle x to y
-        int getValue(int x, int y) const;
+  int getValue(int x, int y) const;
 
 	// sets the given value associated with edge from verticle x to y
 	AdjacencyMatrix & setValue(int x, int y, int val);
