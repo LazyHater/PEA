@@ -10,7 +10,7 @@
 AdjacencyMatrix::AdjacencyMatrix(const AdjacencyMatrix & obj)
 {
 	for (auto vec : obj.matrix)
-		matrix.push_back(std::vector<int>(vec));
+	matrix.push_back(std::vector<int>(vec));
 	V = obj.V;
 	E = obj.E;
 }
@@ -19,8 +19,8 @@ AdjacencyMatrix::~AdjacencyMatrix()
 {
 }
 
-inline int AdjacencyMatrix::getV() const { return V; };
-inline int AdjacencyMatrix::getE() const { return E; };
+ int AdjacencyMatrix::getV() const { return V; };
+ int AdjacencyMatrix::getE() const { return E; };
 
 
 //std::deque<int> AdjacencyMatrix::neighbors(int x) const
